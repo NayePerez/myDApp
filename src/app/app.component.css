@@ -1,0 +1,240 @@
+.backspace { margin-left:20px; margin-top: 5px;}
+
+:host {
+    font-family:'Francois One', sans-serif;  font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.content{
+    width: 1200px; 
+}
+.toolbar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: #348272;
+    color: white;
+}
+
+.content {
+    display: flex;
+    margin: 60px auto 32px;
+    padding: 0 16px;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.opciones{
+    display: flex;
+    flex-direction: row;    
+}
+
+.card{
+    background-color: #dcdff6;
+    align-items: center;
+    font-family: 'Francois One', sans-serif;
+}
+
+.card1 {
+    border-radius: 4px;
+    background-color: #348272;    
+    color: white;
+    height: auto;
+    margin: 0 50px 0 0 ;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 5px;
+    
+}
+.card2 {
+    border-radius: 4px;
+    background-color: #348272;    
+    color: white;
+    width: 65%;
+    height: auto;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 5px;
+    
+}
+.introducir-datos{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+}
+.espacio_enMedio{
+    margin-right: 50;
+    width: 80%;
+}
+
+.card.highlight-card {
+    background-color: #7CD1B8; 
+    color: white;
+    font-weight: 1000;
+    border: none;
+    min-width: 100%;
+}
+
+.btn { 
+    border: #D4962E;
+    background-color: #D4962E ;
+}
+
+.titulo{
+ text-align: center;
+}
+.distancia{
+margin-left: 950px;
+}
+/*********************************/
+
+
+/*******************************************************************++*****/
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .slider {
+    width: 1000px;
+   /*  height: 300px;  */
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  .slides::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  .slides::-webkit-scrollbar-thumb {
+    background: #348272;
+    border-radius: 10px;
+  }
+  .slides::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .slides > div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 1000px; /* ancho de contenedor de slider */
+    height: 400px; /* alto */
+    margin-right: 50px;
+    border-radius: 10px;
+    background: #FAEDC6;
+    transform-origin: center center;
+    transition: transform 0.5s;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+  }
+  .slides > div:target {
+  transform: scale(1); /* alto del contenedor */
+  }
+  .slider > a {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 1 0.5rem 0;
+    position: relative;
+  }
+  .slider > a:active {
+    top: 1px;
+  }
+  .slider > a:focus {
+    background: #D4962E;
+  }
+  
+  /* Don't need button navigation */
+  @supports (scroll-snap-type) {
+    .slider > a {
+      display: none;
+    }
+  }
+
+  .button_conectar {
+    border-radius: 10;
+    background-color: #FABB51; /* amarillo */
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align:center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+  .button {
+    background-color: #FABB51; /* amarillo */
+    border: none;
+    color: white;
+    padding: 14px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+/***/
+
+h1{
+    size: 26px;
+}
+h5{
+    size: 10px;
+}
+.p{
+    font-size: 30px;
+    size: 30px;
+}
+/************************/
+.slide{
+    font-size: 12px;
+   }
+
+.pregresp {
+    margin-top: 30px;
+    padding: 10px;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    }
+    
+    .pregunta {
+    color: #7DA5E0;
+    font-size: 25px;
+    }
+    
+    .respuestas {
+      margin-top: 20px;
+      margin-left: 30px;
+    align-items: center;
+    text-align: left;
+    color: #000000;
+    font-size: 20px;
+    }

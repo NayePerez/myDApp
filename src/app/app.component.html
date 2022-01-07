@@ -1,0 +1,158 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+
+<!---------------------- TOOLBAR--------------------------------->
+<div class="toolbar">
+  <span class="backspace">
+    <h4>Estado: {{msgEstado}}</h4>
+  </span>
+  <div *ngIf="!estado" class="backspace"><button (click)="conectar()" class="button_conectar">Conectar</button></div>
+  <form [formGroup]="consultaSaldoForm" class="distancia">
+    <div class="introducir-datos">
+      <button (click)="checarBalance()" class="button_conectar">Saldo</button>
+      <div class="backspace">
+        <p class="h5"> {{balanceOf}}</p> <!-- Estado de cuenta-->
+      </div>
+  </div>
+  </form>
+</div>
+<!----------------------TITTLE--------------------------------->
+<div class="content">
+  <!-- Highlight Card -->
+  <br>
+  <div class="card highlight-card card-small">
+    <h1>DApp QualiCoin</h1>
+  </div>
+  <br>
+  <!----------------------SLIDER DE ENCUESTAS------------------->
+  <div class="slider">
+    <div class="slides">
+      <div class="slide" id="slide-1">
+        <form [formGroup]="respondeEncuestaForm">
+          <div class="pregresp">
+            <div class="pregunta">1. Indica cuál es el nivel de estudios que tienes actualmente<br />
+            </div>
+            <div class="respuestas">
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="1" /> Bachillerato<br />
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="2" /> Licenciatura<br />
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="3" /> Maestria <br />              
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="3" /> Doctorado <br />
+            </div>
+          </div>
+          <button (click)="validarRespondido()" [disabled]="deshabilitado" class="button">Envíar respuesta</button>
+          <p class="h5">{{resultPago}}</p> <!-- NUEVO METODO PARA COBRAR, ES UNA TRANSFERENCIA----------->
+        </form>
+      </div>
+      <div  class="slide" id="slide-2">
+        <form [formGroup]="respondeEncuestaForm">
+          <div class="pregresp">
+            <div class="pregunta">2. ¿Hasta que nivel de estudios te gustaría estudiar?<br />
+            </div>
+            <div class="respuestas">
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="1" /> Bachillerato<br />
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="2" /> Licenciatura<br />
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="3" /> Maestria <br />              
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="3" /> Doctorado <br />
+            </div>
+          </div>
+          <button (click)="validarRespondido()" [disabled]="deshabilitado" class="button">Envíar respuesta</button>
+        </form>
+      </div>
+      <div  class="slide" id="slide-3">
+        <form [formGroup]="respondeEncuestaForm">
+          <div class="pregresp">
+            <div class="pregunta">3. ¿Has tenido una beca a lo largo de tu trayectoria académica?<br />
+            </div>
+            <div class="respuestas">
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="1" /> Sí<br />
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="2" /> No<br />
+            </div>
+          </div>
+          <button (click)="validarRespondido()" [disabled]="deshabilitado" class="button">Envíar respuesta</button>
+          <p class="h5">{{resultPago}}</p> <!-- NUEVO METODO PARA COBRAR, ES UNA TRANSFERENCIA----------->
+        </form>
+      </div>
+      <div  class="slide" id="slide-4">
+        <form [formGroup]="respondeEncuestaForm">
+          <div class="pregresp">
+            <div class="pregunta">4. Establece tu nivel de satisfaccción de los programas académicos cursados <br />
+            </div>
+            <div class="respuestas">
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="1" /> Muy Satisfecho<br />
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="2" /> Satisfecho<br />
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="3" /> Neutral<br />
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="2" /> Insatisfecho<br />
+            </div>
+          </div>
+          <button (click)="validarRespondido()" [disabled]="deshabilitado" class="button">Envíar respuesta</button>
+          <p class="h5">{{resultPago}}</p> <!-- NUEVO METODO PARA COBRAR, ES UNA TRANSFERENCIA----------->
+        </form>
+      </div>
+      <div  class="slide" id="slide-5">
+        <form [formGroup]="respondeEncuestaForm">
+          <div class="pregresp">
+            <div class="pregunta">5. ¿Qué tan difíciles han sido tus programas cursados?<br />
+            </div>
+            <div class="respuestas">
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="1" /> Muy difícil<br />
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="2" /> Difícil<br />
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="3" /> Neutral<br />
+              <input (click)="habilitarBoton()" [disabled]="deshabilitadoRB" type="radio" name="preg1" value="2" /> Fácil<br />
+            </div>
+          </div>
+          <button (click)="validarRespondido()" [disabled]="deshabilitado" class="button">Envíar respuesta</button>
+          <!-- <p class="h5">{{resultPago}}</p> NUEVO METODO PARA COBRAR, ES UNA TRANSFERENCIA-----------> 
+        </form>
+      </div>
+    </div>
+    <a href="#slide-1">1</a>
+    <a href="#slide-2" (click)="habilitarRB()">2</a>
+    <a href="#slide-3" (click)="habilitarRB()">3</a>
+    <a href="#slide-4"(click)="habilitarRB()">4</a>
+    <a href="#slide-5" (click)="habilitarRB()">5</a>
+  </div>
+  <br>
+  <!----------------------OPCIONES------------------------------>
+  <div class="opciones">
+    <!----------------------CONSULTAR LAS RECOMPENSAS------------->
+    <div class="card1">
+      <form [formGroup]="consultaSaldoForm">
+        <h2 class="titulo">QC Ganados</h2>
+        <br>
+        <p class="h5">Ganados: {{qcganados}} </p> <!-- Introducir los ganados en ese momento -->
+        <p class="h5">Cuenta:</p> <input type="text" class="form-control" formControlName="addressRecibirRecompensa">
+        <!-- Introducir los ganados en ese momento -->
+        <br><br>
+        <button (click)="cobrarTokens()" class="button">Recompensa</button>
+        <p class="h5">{{resultPago}}</p> <!-- NUEVO METODO PARA COBRAR, ES UNA TRANSFERENCIA----------->
+      </form>
+    </div>
+    <!----------------------TRANFERIR------------------------->
+    <div class="card2">
+      <form [formGroup]="transferirForm">
+        <h2 class="titulo">Transferir QualiCoins</h2>
+        <div class="introducir-datos">
+          <div class="espacio_enMedio">
+            <!---espacio entre form control-->
+            <p class="h5">Cuenta Destino</p> <input type="text" class="form-control" formControlName="addressDestino">
+          </div>
+          <div>
+            <p class="h5">Cantidad</p><input type="text" class="form-control" formControlName="cantidadTokens">
+          </div>
+        </div>
+        <br><br>
+        <button (click)="transferirTokens()" class="button">Transferir</button><p class="h5">{{resultTransferencia}}</p>
+      </form>
+    </div>
+
+  </div>
+</div>
