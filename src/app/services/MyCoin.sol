@@ -11,8 +11,8 @@ contract MyCoin{
     mapping(address => mapping(address => uint256)) public allowance; //Saber cuantos tokens mios puede gestionar otra cuenta.
 
     constructor(){
-        name = "MediCoin";
-        symbol = "MC";
+        name = "QualiCoin";
+        symbol = "QC";
         decimals = 10;
         totalSupply = 1000 * (uint256(10) ** decimals); //cantidad total
         balanceOf[msg.sender] = totalSupply;
